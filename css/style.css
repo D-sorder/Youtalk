@@ -51,6 +51,10 @@
     text-decoration: none;
 }
 
+.nav__link a:hover {
+    text-decoration: underline;
+}
+
 .nav__link_link-type_view-more {
     position: relative;
     padding-right: 22px;
@@ -89,6 +93,7 @@
     position: relative;
     text-align: center;
     margin-right: 8px;
+    text-decoration: none;
 }
 
 .header__crumb::after {
@@ -104,3 +109,349 @@
 .header__crumb:last-child::after {
     display: none;
 }
+
+.blog__title {
+    margin-top: 30px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.blog__nav {
+    margin-top: 32px;
+}
+
+.blog__nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.blog__nav-button {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 8px;
+    border: 1px solid #C1C5CD;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    box-sizing: content-box;
+    letter-spacing: 0px;
+    cursor: pointer;
+}
+
+.blog__nav-button.active {
+    border: 2px solid #16C8BB;
+}
+
+.blog__nav-button img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.blog__grid {
+    margin-top: 24px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px 475px 475px;
+    grid-auto-rows: 475px 475px 475px; 
+    /* пришлось добавить второй и третий параметр, потому-что последняя строка не входила в высоту блока, я не смог понять почему, не адаптивно чет*/
+    gap: 24px;
+    height: stretch;
+}
+
+.blog__secondary-grid {
+    grid-column: 2 span;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 475px 475px;
+    grid-auto-rows: 475px 475px;
+    gap:24px;
+}
+
+.blog__article {
+    overflow: hidden;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+.blog__article-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.blog__article-image {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 100%;
+    text-align: center;
+    max-height: 52%;
+    flex-grow: 1;
+}
+
+.blog__tag-box {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.blog__tag {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 8px;
+    background-color: rgba(255, 255, 255, .7);
+    border: 1px solid #C1C5CD;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    box-sizing: content-box;
+    letter-spacing: 0px;
+    margin-bottom: 8px;
+    width: fit-content;
+}
+
+.blog__tag img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.blog__article-text {
+    height: 49%;
+    border: 1px solid #dedede;
+    padding: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.blog__inner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.blog__article-title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 26px;
+}
+
+.blog__article:hover .blog__article-title {
+    text-decoration: underline;
+}
+
+.blog__author {
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    color: #494949;
+    font-weight: 400;
+    padding-bottom: 4px;
+}
+
+.blog__article-paragraph {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.blog__date {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.blog__view-more {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    padding: 12px 72.5px;
+    background-color: #35b3a9;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    align-self: center;
+    margin: 56px auto;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #2963a3;
+}
+
+.footer__stuff {
+    width: 100%;
+    border-bottom: 1px solid #9d9d9d;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 40px 0 24px;
+}
+
+.footer__links {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__links-coll {
+    list-style: none;
+}
+
+.footer__link {
+    margin-bottom: 16px;
+}
+
+.footer__link a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.footer__link a:hover {
+    text-decoration: underline;
+}
+
+.footer__subscribe {
+    width: 40%;
+}
+
+.footer__title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 26px;
+    color: #fff;
+    width: 90%;
+}
+
+.footer__send {
+    width:90%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-sizing: content-box;
+    outline: 1px solid rgba(157, 157, 157, .2);
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+.footer__input::placeholder {
+    color: #9d9d9d;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.footer__input {
+    height: 100%;
+    padding: 14px 16px;
+    width: 80%;
+    border: none;
+    border-radius: 4px;
+}
+
+.footer__button {
+    background-color: #16C8BB;
+    padding: 13px 23px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer__subtitle {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: .25px;
+    color: #fff;
+}
+
+.footer__social {
+    width: 18%
+}
+
+.footer__partners {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.footer__social-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer__social-link {
+    margin-right: 16px;
+}
+
+.footer__social-link a {
+    display: block;
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 60px;
+    position: relative;
+}
+
+.footer__social-link:last-child a {
+    background-color: #333;
+}
+
+.footer__social-link img {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer__copyright {
+    padding: 17px 0;
+    
+}
+
+.footer__copyright a, 
+.footer__copyright span  {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-right: 48px;
+    color: #fff;
+}
+
+.footer__copyright a:hover {
+    text-decoration: underline;
+}
+
