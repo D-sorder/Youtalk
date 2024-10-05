@@ -3,7 +3,7 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+    box-sizing: content-box;
     margin: 0;
     padding: 0;
     font-family: "montserrat", sans-serif;
@@ -45,10 +45,12 @@
 
 .nav__link a {
     font-weight: 500;
+    letter-spacing: 0.25px;
     color: #333;
     font-size: 14px;
     text-align: center;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .nav__link a:hover {
@@ -79,6 +81,38 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    white-space: nowrap;
+}
+
+.header__burger {
+    display: none;
+    width: 18px;
+    height: 2px;
+    background-color: #03b2a5;
+    position: relative;
+}
+
+.header__burger::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    background-color: #03b2a5;
+}
+
+.header__burger::after {
+    content: "";
+    width: 18px;
+    height: 2px;
+    position: absolute;
+    display: block;
+    bottom: -6px;
+    left: 0;
+    cursor: pointer;
+    background-color: #03b2a5;
 }
 
 .header__crumbs {
@@ -199,7 +233,6 @@
     overflow: hidden;
     max-width: 100%;
     text-align: center;
-    max-height: 52%;
     flex-grow: 1;
 }
 
@@ -235,7 +268,7 @@
 }
 
 .blog__article-text {
-    height: 49%;
+    min-height: 49%;
     border: 1px solid #dedede;
     padding: 16px;
     border-bottom-left-radius: 16px;
@@ -339,7 +372,7 @@
 }
 
 .footer__subscribe {
-    width: 40%;
+    max-width: 40%;
 }
 
 .footer__title {
@@ -351,8 +384,8 @@
 }
 
 .footer__send {
-    width:90%;
     height: 48px;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     background-color: #fff;
@@ -394,7 +427,7 @@
 }
 
 .footer__social {
-    width: 18%
+    width: 25%
 }
 
 .footer__partners {
@@ -453,5 +486,51 @@
 
 .footer__copyright a:hover {
     text-decoration: underline;
+}
+
+@media (max-width:1024px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .nav__list {
+        gap: 16px;
+    }
+
+    .header__logo-nav {
+        gap: 32px;
+    }
+
+    .kill_her_on_adoptation_lmao {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        max-width: 728px;
+    }
+
+    .header__burger {
+        display: block;
+    }
+
+    .nav,
+    .header__search-btn {
+        display: none;
+    }
+
+    .blog__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 500px 475px 475px;
+        grid-auto-rows: 475px 475px 475px; 
+    }
+
+    .blog__secondary-grid {
+        grid-column: 1 span;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 475px 475px;
+        grid-auto-rows: 475px 475px;
+    }
 }
 
