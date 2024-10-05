@@ -192,8 +192,8 @@
     max-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 500px 475px 475px;
-    grid-auto-rows: 475px 475px 475px; 
+    grid-template-rows: auto auto;
+    grid-auto-rows: 1fr 1fr 1fr; 
     /* пришлось добавить второй и третий параметр, потому-что последняя строка не входила в высоту блока, я не смог понять почему, не адаптивно чет*/
     gap: 24px;
     height: stretch;
@@ -204,8 +204,8 @@
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 475px 475px;
-    grid-auto-rows: 475px 475px;
+    grid-template-rows: auto auto;
+    grid-auto-rows: 1fr 1fr;
     gap:24px;
 }
 
@@ -233,7 +233,7 @@
     overflow: hidden;
     max-width: 100%;
     text-align: center;
-    flex-grow: 1;
+    max-height: 52%;
 }
 
 .blog__tag-box {
@@ -268,7 +268,7 @@
 }
 
 .blog__article-text {
-    min-height: 49%;
+    flex-grow: 1;
     border: 1px solid #dedede;
     padding: 16px;
     border-bottom-left-radius: 16px;
@@ -403,11 +403,12 @@
 }
 
 .footer__input {
-    height: 100%;
+    max-height: 100%;
     padding: 14px 16px;
     width: 80%;
     border: none;
     border-radius: 4px;
+    display: flex;
 }
 
 .footer__button {
@@ -522,15 +523,81 @@
 
     .blog__grid {
         grid-template-columns: 1fr;
-        grid-template-rows: 500px 475px 475px;
-        grid-auto-rows: 475px 475px 475px; 
+        grid-template-rows: auto auto auto;
     }
 
     .blog__secondary-grid {
         grid-column: 1 span;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 475px 475px;
-        grid-auto-rows: 475px 475px;
+    }
+
+    .footer__stuff {
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .footer__subscribe {
+        max-width: 55%;
+        max-height: 100%;
+    }
+
+    .footer__links {
+        width: 35%;
+    }
+
+    .footer__social {
+        margin-top: 26px;
     }
 }
 
+@media (max-width: 414px) {
+    .container {
+        max-width: 374px;
+    }
+
+    .blog__nav-list {
+        flex-wrap: nowrap;
+        overflow: scroll;
+    }
+
+    .blog__nav-item {
+        max-height: 36px;
+        width: auto;
+        white-space: nowrap;
+    }
+    .blog__nav-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .blog__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+    }
+
+    .blog__secondary-grid {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+    }
+
+    .footer__links {
+        width: 100%;
+    }
+    
+    .footer__subscribe {
+        max-width: 100%;
+        margin-top: 23px;
+    }
+    
+    .footer__copyright {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 37px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        max-width: 288px;
+    }
+}
