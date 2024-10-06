@@ -4,3 +4,10 @@
         local("montserrat"),
         url("../fonts/montserrat/Montserrat-VariableFont_wght.ttf") format("TrueType");
 }
+
+@font-face {
+    font-family: "Open Sans";
+    src:
+        local("Open Sans"),
+        url("../fonts/Open\ Sans.ttf") format("TrueType");
+}
